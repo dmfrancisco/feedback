@@ -1,18 +1,20 @@
-= Feedback Plugin for Rails
+Feedback Plugin for Rails
+=========================
 
-Feedback is a Ruby on Rails plugin that adds an ajax-based 
-overlay feedback form triggered by a side-screen tab or a link. 
+Feedback is a Ruby on Rails plugin that adds an ajax-based
+overlay feedback form triggered by a side-screen tab or a link.
 The result of the feedback form is sent through a ActionMailer.
 
-The plugin was inspired from the "feedback" widget of 
-GetSatisfaction.com and UserVoice.com. 
+The plugin was inspired from the "feedback" widget of
+GetSatisfaction.com and UserVoice.com.
 
 The plugin uses a generator to generate boiler-plate Javascript,
 CSS, HTML, and ruby code into your application.
 It sets up a ready to use feedback form (with minimal styling)
 that you can further customize.
 
-== Features
+Features
+--------
 
 * Helper to display a sticky "feedback" tab.
 * Display feedback form as an overlay with Ajax.
@@ -23,107 +25,108 @@ that you can further customize.
 * Currently supports IE6, IE7, IE8, FF2, FF3, Chrome2 and SafariX
 
 
-== Motivation
+Motivation
+----------
 
 Collecting feedback from users is really important. Third-party services
-such as GetSatisfaction.com and UserVoice.com are awesome tools to manage your feedback. 
-However, we found out that in many instances such as for small sites or back-ends, we wanted 
+such as GetSatisfaction.com and UserVoice.com are awesome tools to manage your feedback.
+However, we found out that in many instances such as for small sites or back-ends, we wanted
 a similar feedback form integration/experience but simpler, local, and customized.
 
 
-== Install and Getting Started
+Install and Getting Started
+---------------------------
 
 Install the plugin:
 
-  ruby script/plugin install git://github.com/jsboulanger/feedback.git
+    rails plugin install git://github.com/jsboulanger/feedback.git
 
 Run the generator:
 
-  ruby script/generate feedback_form
+    rails generate feedback_form
 
 By default it will generate the Prototype code, you can use jQuery if you prefer:
 
-  ruby script/generate feedback_form --jquery
+    rails feedback_form --jquery
 
 
 Make sure Prototype is included in your header:
 
-  <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :defaults %>
 
 
 Include the feedback.css and the prototype.feedback.js files into your header.
 There is a helper to do that:
 
-  <%= feedback_includes %>
+    <%= feedback_includes %>
 
 
 To add a sticky 'feedback' tab to your site, in the header place:
 
-  <%= feedback_tab(:position => 'top') %>
+    <%= feedback_tab(:position => 'top') %>
 
 
 Configure the action mailer in app/models/feedback_mailer.rb
 
-  def feedback(feedback)
-    @recipients = 'you@yoursite.com'
-    @from = 'system@yoursite.com'
-    @subject = "[Feedback for YourSite.com] #{feedback.subject}"
-    ...
-  
+    def feedback(feedback)
+      @recipients = 'you@yoursite.com'
+      @from = 'system@yoursite.com'
+      @subject = "[Feedback for YourSite.com] #{feedback.subject}"
+      ...
 
-== How-to's
 
-=== How to customize the position of the feedback tab?
+How-to's
+--------
+
+### How to customize the position of the feedback tab?
 
 The feedback_tab helper takes the option "position" which has four different values (top|bottom|left|right)
 that corresponds to class in the feedback.css file. You can fine tune the position by changing the left/right, top/bottom
 attributes of those css classes.
 
-=== How to trigger the feedback form from a custom link?
+### How to trigger the feedback form from a custom link?
 
 The feedback_link(text, options={}) helper allows you the create a link that will trigger the feedback form.
 
-  <%= feedback_link "Leave us feedback!" %>
+    <%= feedback_link "Leave us feedback!" %>
 
 Your layout header must also have the includes:
 
-  <%= feedback_includes %>
+    <%= feedback_includes %>
 
-
-=== How to customize the email message?
+### How to customize the email message?
 
 Edit the /app/views/feedback_mailer/feedback.html.erb generated file in your app
 
-
-=== How to store the feedback results in the database?
+### How to store the feedback results in the database?
 
 Feedback generates a model that is not an active record model. In order to store the feedbacks in your database, make it
 an active record model:
 
-  class Feedback < ActiveRecord::Base
-    validates_presence_of :comment
-  end
+    class Feedback < ActiveRecord::Base
+      validates_presence_of :comment
+    end
 
 You must also write a migration to create your table:
 
-  class CreateFeedbacks < ActiveRecord::Migration
-    def self.up
-      create_table :feedbacks do |t|
-        t.string :subject
-        t.string :email
-        t.text   :comment
-        t.timestamps
+    class CreateFeedbacks < ActiveRecord::Migration
+      def self.up
+        create_table :feedbacks do |t|
+          t.string :subject
+          t.string :email
+          t.text   :comment
+          t.timestamps
+        end
+      end
+
+      def self.down
+        drop_table :feedbacks
       end
     end
 
-    def self.down
-      drop_table :feedbacks
-    end
-  end
 
-
-
-== Limitations (TODOs)
+Limitations (TODOs)
+-------------------
 
 * No unit tests for Javascript
 * Feedback PNG with transparency supported by IE6
@@ -131,8 +134,8 @@ You must also write a migration to create your table:
 * More customization options through helpers: (overlay style, tab color, etc...)
 
 
-== Acknowledgements
-
+Acknowledgements
+----------------
 
 Thanks to GetSatisfaction.com for the
 idea of the "feedback" tab.
@@ -143,7 +146,6 @@ Thanks to their respective authors.
 * restful_authentication: http://github.com/technoweenie/restful-authentication/tree/master
 
 
-
 Copyright (c) 2009 Jean-Sebastien Boulanger <jsboulanger@gmail.com>, released under the MIT license
 
-http://jsboulanger.com
+[http://jsboulanger.com](http://jsboulanger.com)
