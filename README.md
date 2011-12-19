@@ -64,7 +64,7 @@ To add a sticky 'feedback' tab to your site, in the header place:
 
 Configure the action mailer in app/models/feedback_mailer.rb
 
-    class <%= mailer_class_name %> < ActionMailer::Base
+    class FeedbackMailer < ActionMailer::Base
       default from: "from@example.com"
 
       def feedback(feedback)
