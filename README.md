@@ -49,30 +49,32 @@ By default it will generate the Prototype code, you can use jQuery if you prefer
 
     rails feedback_form --jquery
 
-
 Make sure Prototype is included in your header:
 
     <%= javascript_include_tag :defaults %>
-
 
 Include the feedback.css and the prototype.feedback.js files into your header.
 There is a helper to do that:
 
     <%= feedback_includes %>
 
-
 To add a sticky 'feedback' tab to your site, in the header place:
 
     <%= feedback_tab(:position => 'top') %>
 
-
 Configure the action mailer in app/models/feedback_mailer.rb
 
-    def feedback(feedback)
-      @recipients = 'you@yoursite.com'
-      @from = 'system@yoursite.com'
-      @subject = "[Feedback for YourSite.com] #{feedback.subject}"
-      ...
+    class <%= mailer_class_name %> < ActionMailer::Base
+      default from: "from@example.com"
+
+      def feedback(feedback)
+        recipients  = 'webmaster@yoursite.com'
+        subject     = "[Feedback for YourSite] #{feedback.subject}"
+
+        @feedback = feedback
+        mail(:to => recipients, :subject => subject)
+      end
+    end
 
 
 How-to's
