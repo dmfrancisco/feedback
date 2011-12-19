@@ -32,34 +32,34 @@ class FeedbackFormGenerator < Rails::Generators::Base
   def add_routes
     route "resources :#{model_name}, :only => [:new, :create]"
   end
-  
+
   def add_specs
     if options.rspec?
       # TODO
     else
       template 'feedback_test.rb.erb', "test/unit/#{model_name}_test.rb"
       template 'feedback_mailer_test.rb.erb', "test/unit/#{model_name}_mailer_test.rb"
-      template 'feedback_controller_test.rb.erb', "test/functional/#{model_name}_controller_test.rb"       
+      template 'feedback_controller_test.rb.erb', "test/functional/#{model_name}_controller_test.rb"
     end
   end
 
   def add_stylesheet
-    empty_directory 'public/stylesheets'
-    copy_file 'feedback.css', 'public/stylesheets/feedback.css'
+    empty_directory 'app/assets/stylesheets'
+    copy_file 'feedback.css', 'app/assets/stylesheets/feedback.css'
   end
 
   def add_javascript
-    empty_directory 'public/javascripts'
+    empty_directory 'app/assets/javascripts'
     file_name = options.jquery ? 'jquery.feedback.js' : 'prototype.feedback.js'
-    copy_file file_name, "public/javascripts/#{file_name}"
+    copy_file file_name, "app/assets/javascripts/#{file_name}"
   end
 
   def add_images
     empty_directory 'public/images/feedback'
-    copy_file "images/feedback_tab.png", "public/images/feedback/feedback_tab.png"
-    copy_file "images/feedback_tab_h.png", "public/images/feedback/feedback_tab_h.png"
-    copy_file "images/closelabel.gif", "public/images/feedback/closelabel.gif"
-    copy_file "images/loading.gif", "public/images/feedback/loading.gif"
+    copy_file "images/feedback_tab.png", "app/assets/images/feedback/feedback_tab.png"
+    copy_file "images/feedback_tab_h.png", "app/assets/images/feedback/feedback_tab_h.png"
+    copy_file "images/closelabel.gif", "app/assets/images/feedback/closelabel.gif"
+    copy_file "images/loading.gif", "app/assets/images/feedback/loading.gif"
   end
 
 
