@@ -8,7 +8,7 @@ class <%= controller_class_name %> < ApplicationController
   def create
     @feedback = <%= model_class_name %>.new(params[:feedback])
     if @feedback.valid?
-      <%= mailer_class_name %>.deliver_feedback(@feedback)
+      <%= mailer_class_name %>.feedback(@feedback).deliver
       render :status => :created, :text => '<h3>Thank you for your feedback!</h3>'
     else
       @error_message = "Please enter your #{@feedback.subject.to_s.downcase}"
