@@ -1,5 +1,5 @@
-Feedback Plugin for Rails
-=========================
+Feedback Plugin for Rails _(tested with 3.1.0)_
+===============================================
 
 Feedback is a Ruby on Rails plugin that adds an ajax-based
 overlay feedback form triggered by a side-screen tab or a link.
