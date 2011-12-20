@@ -41,20 +41,23 @@ Install the plugin:
 
     rails plugin install git://github.com/jsboulanger/feedback.git
 
-Run the generator:
+Run the generator (by default it will generate the **Prototype** code):
 
     rails generate feedback_form
 
-By default it will generate the Prototype code, you can use jQuery if you prefer:
+You can use **jQuery** if you prefer:
 
-    rails feedback_form --jquery
+    rails generate feedback_form --jquery
 
-Make sure Prototype is included in your header:
+Make sure you have the following line in the header of your layout:
 
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "application" %>
 
-Include the feedback.css and the prototype.feedback.js files into your header.
-There is a helper to do that:
+Require the feedback.css and the jquery.feedback.js files in your application.css
+and application.js files. The default "= require_tree ." statement is enough.
+
+As an alternative, you can include those files into your header using an old
+helper from the Rails 2.3 version, like this:
 
     <%= feedback_includes %>
 
