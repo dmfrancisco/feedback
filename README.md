@@ -151,6 +151,17 @@ Thanks to their respective authors.
 * restful_authentication: http://github.com/technoweenie/restful-authentication/tree/master
 
 
+Author and main contributors
+----------------------------
+
+This project was started and developed mainly by [Jean-Sebastien Boulanger](https://github.com/jsboulanger/feedback).
+
+Most of the hard work made for the Rails 3.1 compatibility was done by [Alkesh Vaghmaria](https://github.com/alkesh/feedback).
+
+The demo and some final issues were resolved by [me](http://dmfranc.com).
+
+---
+
 Copyright (c) 2009 Jean-Sebastien Boulanger <jsboulanger@gmail.com>, released under the MIT license
 
 [http://jsboulanger.com](http://jsboulanger.com)
