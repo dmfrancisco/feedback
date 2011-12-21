@@ -1,3 +1,55 @@
-*.swp
+.gitignore
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
 *.swo
-*.swn
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+intermediate
+publish
+.idea
+
+# Build script local files
+build/buildinfo.properties
+build/config/buildinfo.properties
+
+# Rails specific
+
+/tmp/**
+db/development.sqlite3
+
+# Bundler
+
+*.gem
+.bundle
+Gemfile.lock
+pkg/*

@@ -37,6 +37,10 @@ a similar feedback form integration/experience but simpler, local, and customize
 Install and Getting Started
 ---------------------------
 
+Support for Rails 2.3.x can be found by installing Feedback 1.0.x from the v1.0 branch.  
+Support for Rails 3.0.x can be found by installing Feedback 2.0.x from the v2.0 branch.  
+Support for Rails 3.1.x and newer can be found in the master branch.
+
 Install the plugin:
 
     rails plugin install git://github.com/jsboulanger/feedback.git
@@ -55,7 +59,6 @@ Make sure you have the following line in the header of your layout:
 
 Require the feedback.css and the jquery.feedback.js files in your application.css
 and application.js files. The default "= require_tree ." statement is enough.
-
 As an alternative, you can include those files into your header using an old
 helper from the Rails 2.3 version, like this:
 
@@ -154,11 +157,9 @@ Thanks to their respective authors.
 Author and main contributors
 ----------------------------
 
-This project was started and developed mainly by [Jean-Sebastien Boulanger](https://github.com/jsboulanger/feedback).
-
-Most of the hard work made for the Rails 3.1 compatibility was done by [Alkesh Vaghmaria](https://github.com/alkesh/feedback).
-
-The demo and some final issues were resolved by [me](http://dmfranc.com).
+This project was created by [Jean-Sebastien Boulanger](https://github.com/jsboulanger/feedback).  
+Changes for the Rails 3.0 compatible version were made by [Alkesh Vaghmaria](https://github.com/alkesh/feedback).  
+Final adjustments for the Rails 3.1 compatible version and the demo were made by [David Francisco](https://github.com/dmfrancisco/feedback).
 
 ---
 
