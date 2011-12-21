@@ -43,7 +43,7 @@ Install and Getting Started
 
 Install the plugin:
 
-    rails plugin install git://github.com/jsboulanger/feedback.git
+    rails plugin install git://github.com/dmfrancisco/feedback.git
 
 Run the generator (by default it will generate the **Prototype** code):
 
