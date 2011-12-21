@@ -43,7 +43,7 @@ Support for Rails 3.1.x and newer can be found in the master branch.
 
 Install the plugin:
 
-    ruby script/plugin install git://github.com/jsboulanger/feedback.git
+    ruby script/plugin install git://github.com/dmfrancisco/feedback.git -r v1.0
 
 Run the generator:
 
