@@ -1,5 +1,5 @@
-Feedback Plugin for Rails _(tested with 3.1.0)_
-===============================================
+Feedback Plugin for Rails
+=========================
 
 Feedback is a Ruby on Rails plugin that adds an ajax-based
 overlay feedback form triggered by a side-screen tab or a link.
@@ -37,9 +37,9 @@ a similar feedback form integration/experience but simpler, local, and customize
 Install and Getting Started
 ---------------------------
 
-Support for Rails 2.3.x can be found by installing Feedback 1.0.x from the v1.0 branch.  
-Support for Rails 3.0.x can be found by installing Feedback 2.0.x from the v2.0 branch.  
-Support for Rails 3.1.x and newer can be found in the master branch.
+**Support for Rails 2.3.x can be found by installing Feedback 1.0.x from the v1.0 branch.**  
+**Support for Rails 3.0.x can be found by installing Feedback 2.0.x from the v2.0 branch.**  
+**Support for Rails 3.1.x and newer can be found in the master branch.**
 
 Install the plugin:
 
